@@ -1,0 +1,7 @@
+{
+  "type": "kingyellow:castelo_do_rei",
+  "biomes": "#kingyellow:has_carcosa",
+  "step": "surface_structures",
+  "spawn_overrides": {},
+  "terrain_adaptation": "none"
+}

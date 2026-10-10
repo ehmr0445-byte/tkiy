@@ -1,0 +1,7 @@
+{
+  "type": "kingyellow:lago_de_hali",
+  "biomes": "#kingyellow:has_carcosa",
+  "step": "surface_structures",
+  "spawn_overrides": {},
+  "terrain_adaptation": "none"
+}

@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "kingyellow:castelo_do_rei",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 1,
+    "separation": 0,
+    "salt": 1000002
+  }
+}

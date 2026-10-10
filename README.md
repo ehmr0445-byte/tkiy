@@ -1,15 +1,14 @@
-# The King In Yellow (Minecraft 1.20.1 / Forge 47.3.0) - Etapa 2
+# The King In Yellow (Minecraft 1.20.1 / Forge 47.3.0) - Etapa 3
 
 ## Como compilar pelo GitHub
-1. No repositorio, envie TODOS os arquivos desta pasta por cima dos antigos (inclusive `src`, `build.gradle` e `gradle.properties`).
-   A pasta `.github` ja existe no seu repositorio; nao precisa mexer nela.
-2. Aba **Actions** -> a compilacao inicia sozinha.
-3. Ao terminar (marca verde), baixe **kingyellow-mod** em *Artifacts* e extraia o `.jar`.
+1. No repositorio, envie os arquivos desta pasta por cima dos antigos (src, build.gradle, gradle.properties...).
+   A pasta `.github` ja existe no repositorio; nao precisa mexer nela.
+2. Aba **Actions** -> a compilacao inicia sozinha. Ao terminar (marca verde), baixe o `.jar` em *Artifacts*.
+3. Troque o `.jar` antigo na pasta `mods`.
 
-## Como instalar
-Coloque o `.jar` na pasta `mods` do Forge 1.20.1 (substitua a versao antiga).
-
-## O que ha na etapa 2
-- Castelo Abandonado do Rei (estrutura grande, Overworld)
-- 7 Livros do Rei (ler abre a tela do livro; 5 livros diferentes = verdades descobertas)
-- Armadura Amarela (4 pecas, 5 de armadura cada, inquebravel, Protecao IV)
+## O que ha na etapa 3
+- Armadura Amarela redesenhada (estilo netherite dourado, crista vermelha no elmo)
+- Dimensao Carcosa (ceu e horizonte amarelos, dois sois, mundo plano)
+- Cidade de Carcosa, Castelo do Rei e Lago de Hali (um de cada, em posicao fixa)
+- Entrada: ler 5 Livros do Rei, escrever "Leve-me ate Carcosa" no chat e clicar em uma cama
+- Em Carcosa, clicar em uma cama leva de volta ao ponto de renascimento

@@ -44,6 +44,15 @@ public final class ConscienciaData {
         return livrosLidos(p) >= 5;
     }
 
+    /** O jogador pediu a Carcosa no chat (falta deitar em uma cama). */
+    public static boolean pediuCarcosa(Player p) {
+        return raiz(p).getBoolean("pediuCarcosa");
+    }
+
+    public static void definirPediuCarcosa(Player p, boolean valor) {
+        raiz(p).putBoolean("pediuCarcosa", valor);
+    }
+
     /** Chamado no servidor quando o jogador abre um Livro do Rei. */
     public static void lerLivro(ServerPlayer sp, int idLivro) {
         CompoundTag r = raiz(sp);
