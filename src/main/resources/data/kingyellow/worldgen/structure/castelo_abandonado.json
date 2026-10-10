@@ -1,0 +1,7 @@
+{
+  "type": "kingyellow:castelo_abandonado",
+  "biomes": "#kingyellow:has_castelo_abandonado",
+  "step": "surface_structures",
+  "spawn_overrides": {},
+  "terrain_adaptation": "none"
+}

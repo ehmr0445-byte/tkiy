@@ -1,4 +1,15 @@
 {
   "itemGroup.kingyellow": "The King In Yellow",
-  "item.kingyellow.pagina_amarela": "Pagina Amarela"
+  "item.kingyellow.pagina_amarela": "Página Amarela",
+  "item.kingyellow.armadura_amarela_elmo": "Elmo do Rei Amarelo",
+  "item.kingyellow.armadura_amarela_peitoral": "Peitoral do Rei Amarelo",
+  "item.kingyellow.armadura_amarela_calcas": "Calças do Rei Amarelo",
+  "item.kingyellow.armadura_amarela_botas": "Botas do Rei Amarelo",
+  "item.kingyellow.livro_do_rei_1": "Do Vazio Primeiro",
+  "item.kingyellow.livro_do_rei_2": "O Peso da Luz",
+  "item.kingyellow.livro_do_rei_3": "Cassilda Esquece",
+  "item.kingyellow.livro_do_rei_4": "Sob Dois Sóis",
+  "item.kingyellow.livro_do_rei_5": "A Máscara e a Face",
+  "item.kingyellow.livro_do_rei_6": "Lago de Hali",
+  "item.kingyellow.livro_do_rei_7": "O Último Ato"
 }

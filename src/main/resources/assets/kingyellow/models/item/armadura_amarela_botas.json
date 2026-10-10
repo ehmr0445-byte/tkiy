@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "kingyellow:item/armadura_amarela_botas"
+  }
+}

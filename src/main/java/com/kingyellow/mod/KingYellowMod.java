@@ -21,6 +21,8 @@ public class KingYellowMod {
         // Registros do mod (cada etapa nova adiciona seus registros aqui)
         ModItems.ITEMS.register(modBus);
         ModCreativeTabs.TABS.register(modBus);
+        ModStructures.STRUCTURES.register(modBus);
+        ModStructures.PIECES.register(modBus);
 
         LOGGER.info("The King In Yellow carregado. O Rei aguarda.");
     }

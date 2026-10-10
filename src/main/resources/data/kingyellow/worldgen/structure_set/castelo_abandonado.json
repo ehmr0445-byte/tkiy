@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "kingyellow:castelo_abandonado",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 40,
+    "separation": 32,
+    "salt": 1273646801
+  }
+}
