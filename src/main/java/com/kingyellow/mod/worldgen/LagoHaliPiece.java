@@ -5,14 +5,14 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 /**
  * Lago de Hali (centro no meio do chunk -40,0): um lago enorme de agua luminosa, com uma
- * ilha no centro onde cresce uma arvore gigante. Da copa cai um feixe fino de luz azul
- * ate o lago.
+ * ilha no centro onde cresce uma arvore gigante.
  *
  *  - Margem irregular (raio medio 78, ate ~95 blocos)
- *  - Fundo com lanternas marinhas espalhadas (brilho ciano)
+ *  - Agua azul capri brilhante (cor definida no bioma) com lanternas marinhas e luz no fundo
  *  - Arvore: tronco largo com raizes, galhos grossos e copa de ~80 blocos de diametro
  *    (as folhas ganham o tom azul-violeta definido no bioma)
  */
@@ -39,14 +39,6 @@ public class LagoHaliPiece extends PecaProcedural {
         double ang = Math.atan2(dz, dx);
         double margem = 78 + 9 * Math.sin(3 * ang + 1.0) + 5 * Math.cos(5 * ang) + 3 * Math.sin(9 * ang);
 
-        // ---------- feixe de luz (cai da copa ate o lago, a leste da ilha) ----------
-        if (dx == 22 && dz == 0 && y >= -2 && y <= 40) {
-            return (y + 2) % 5 == 0 ? bloco(Blocks.SEA_LANTERN) : bloco(Blocks.LIGHT_BLUE_STAINED_GLASS);
-        }
-        if (y == -2 && Math.max(Math.abs(dx - 22), Math.abs(dz)) <= 2 && hash(dx, y, dz) % 100 < 60) {
-            return bloco(Blocks.SEA_LANTERN);
-        }
-
         // ---------- ilha central ----------
         if (y <= -1 && y >= -12) {
             double raioIlha = 12 + (y < -6 ? 4 : 0);
@@ -67,7 +59,13 @@ public class LagoHaliPiece extends PecaProcedural {
             int fundo = d < margem - 6 ? -12 : (d < margem - 3 ? -8 : -4);
             if (y == -1) return AR;
             if (y >= fundo && y <= -2) {
-                if (y == fundo && hash(dx, y, dz) % 100 < 3) return bloco(Blocks.SEA_LANTERN);
+                int h = hash(dx, y, dz) % 100;
+                if (y == fundo && h < 5) return bloco(Blocks.SEA_LANTERN);
+                // blocos de luz invisiveis dentro da agua: deixam o lago brilhante
+                if (y == -4 && h < 6) {
+                    return bloco(Blocks.LIGHT).setValue(BlockStateProperties.LEVEL, 13)
+                            .setValue(BlockStateProperties.WATERLOGGED, true);
+                }
                 return bloco(Blocks.WATER);
             }
         }

@@ -30,7 +30,7 @@ public abstract class EstruturaCarcosaBase extends Structure {
         }
         final int cx = cp.getMiddleBlockX();
         final int cz = cp.getMiddleBlockZ();
-        final int oy = ctx.chunkGenerator().getFirstOccupiedHeight(cx, cz,
+        final int oy = ctx.chunkGenerator().getFirstFreeHeight(cx, cz,
                 Heightmap.Types.WORLD_SURFACE_WG, ctx.heightAccessor(), ctx.randomState());
         final int semente = (int) (ctx.seed() ^ 0x5EEDL);
         return Optional.of(new Structure.GenerationStub(new BlockPos(cx, oy, cz),

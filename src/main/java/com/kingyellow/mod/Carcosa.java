@@ -21,9 +21,9 @@ public final class Carcosa {
     // Chunks onde nascem as estruturas (uma de cada, em posicao fixa)
     public static final int CIDADE_CHUNK_X = 0;
     public static final int CIDADE_CHUNK_Z = 0;
-    public static final int CASTELO_CHUNK_X = 40;
+    public static final int CASTELO_CHUNK_X = 18;
     public static final int CASTELO_CHUNK_Z = 0;
-    public static final int LAGO_CHUNK_X = -40;
+    public static final int LAGO_CHUNK_X = -18;
     public static final int LAGO_CHUNK_Z = 0;
 
     // Centro da cidade = meio do chunk (0, 0)
@@ -44,7 +44,15 @@ public final class Carcosa {
         if (carcosa == null) {
             return false;
         }
-        int y = carcosa.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) SPAWN_X, (int) SPAWN_Z);
+        // forca a geracao do chunk de destino; sem isso getHeight devolve a altura minima (vazio)
+        int bx = (int) Math.floor(SPAWN_X);
+        int bz = (int) Math.floor(SPAWN_Z);
+        carcosa.getChunk(bx >> 4, bz >> 4);
+        int y = carcosa.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, bx, bz);
+        if (y < 8) {
+            y = 64;
+        }
+        jogador.fallDistance = 0.0F;
         jogador.teleportTo(carcosa, SPAWN_X, y, SPAWN_Z, 180.0F, 0.0F);
         return true;
     }
@@ -69,8 +77,10 @@ public final class Carcosa {
             BlockPos spawn = destino.getSharedSpawnPos();
             x = spawn.getX() + 0.5;
             z = spawn.getZ() + 0.5;
+            destino.getChunk(spawn.getX() >> 4, spawn.getZ() >> 4);
             y = destino.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, spawn.getX(), spawn.getZ());
         }
+        jogador.fallDistance = 0.0F;
         jogador.teleportTo(destino, x, y, z, jogador.getYRot(), 0.0F);
     }
 }
