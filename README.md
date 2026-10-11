@@ -1,23 +1,17 @@
-# The King In Yellow (Minecraft 1.20.1 / Forge 47.3.0) - Etapa 3 (revisao 1)
+# The King In Yellow (Minecraft 1.20.1 / Forge 47.3.0) - Etapa 4
 
 ## Como compilar pelo GitHub
-1. No repositorio, envie os arquivos desta pasta por cima dos antigos (src, build.gradle, gradle.properties...).
+1. Envie os arquivos desta pasta por cima dos antigos no repositorio (src, build.gradle, gradle.properties...).
    A pasta `.github` ja existe no repositorio; nao precisa mexer nela.
-2. Aba **Actions** -> a compilacao inicia sozinha. Ao terminar (marca verde), baixe o `.jar` em *Artifacts*.
-3. Troque o `.jar` antigo na pasta `mods`.
+2. Aba **Actions** -> a compilacao inicia sozinha. Baixe o `.jar` em *Artifacts* e troque o antigo na pasta `mods`.
 
-## O que ha na etapa 3
-- Armadura Amarela redesenhada (estilo netherite dourado, crista vermelha no elmo)
-- Dimensao Carcosa (ceu e horizonte amarelos, dois sois, mundo plano)
-- Cidade de Carcosa, Castelo do Rei e Lago de Hali (um de cada, em posicao fixa)
-- Entrada: ler 5 Livros do Rei, escrever "Leve-me ate Carcosa" no chat e clicar em uma cama
-- Em Carcosa, clicar em uma cama leva de volta ao ponto de renascimento
+## O que ha na etapa 4
+- Rei de Amarelo (mob): fica diante do trono no Castelo do Rei, em Carcosa
+  - pacifico, parado, nao pode ser atacado nem morto
+  - olhar para ele: sussurros altos; na primeira vez, Forca II permanente e a Armadura Amarela
+  - ovo de invocacao na aba criativa, para testes
+- Castelo do Rei: lanternas amarelas flutuando no lugar das teias de aranha
+- Lago de Hali: arvore redesenhada (tronco torcido de casca clara, galhos em curva, nuvens de folhas azuis)
 
-## Revisao 1 (correcoes e novidades)
-- Spawn em Carcosa corrigido (o chunk de destino agora e gerado antes do teleporte)
-- Estruturas de Carcosa assentadas na altura certa (antes ficavam 1 bloco afundadas)
-- Lago de Hali: sem a haste de vidro; agora com agua azul capri brilhante
-- Perto do Lago de Hali o ceu fica azul cobalto com estrelas
-- Cidade: fonte nova de 3 niveis com agua, predios mobiliados, escadas, bibliotecas e baus
-- Estruturas de Carcosa mais proximas (castelo e lago a 288 blocos da cidade)
-- Para ver as posicoes novas, use um mundo novo ou apague a pasta dimensions/kingyellow/carcosa do mundo
+## Teste rapido
+- Crie um mundo criativo e use o ovo "Rei de Amarelo" (aba do mod, pagina 2) para ve-lo sem ir a Carcosa.

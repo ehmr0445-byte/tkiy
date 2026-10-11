@@ -19,6 +19,7 @@ public class ModCreativeTabs {
                     .icon(() -> new ItemStack(ModItems.PAGINA_AMARELA.get()))
                     .displayItems((params, output) -> {
                         output.accept(ModItems.PAGINA_AMARELA.get());
+                        output.accept(ModItems.OVO_REI.get());
                         for (RegistryObject<Item> livro : ModItems.LIVROS) {
                             output.accept(livro.get());
                         }

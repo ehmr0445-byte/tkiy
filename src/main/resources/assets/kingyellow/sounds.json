@@ -1,0 +1,9 @@
+{
+  "sussurros": {
+    "subtitle": "subtitles.kingyellow.sussurros",
+    "sounds": [
+      { "name": "kingyellow:sussurros1", "stream": true },
+      { "name": "kingyellow:sussurros2", "stream": true }
+    ]
+  }
+}

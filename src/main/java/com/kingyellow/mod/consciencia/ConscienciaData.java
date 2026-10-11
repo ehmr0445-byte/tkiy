@@ -53,6 +53,25 @@ public final class ConscienciaData {
         raiz(p).putBoolean("pediuCarcosa", valor);
     }
 
+    /** O jogador ja olhou o Rei de Amarelo e se tornou discipulo. */
+    public static boolean discipulo(Player p) {
+        return raiz(p).getBoolean("discipulo");
+    }
+
+    public static void definirDiscipulo(Player p, boolean valor) {
+        raiz(p).putBoolean("discipulo", valor);
+    }
+
+    /** Tempo de jogo (ticks) do ultimo sussurro ouvido; usado para espacar os sussurros. */
+    public static long ultimoSussurro(Player p) {
+        CompoundTag r = raiz(p);
+        return r.contains("ultimoSussurro") ? r.getLong("ultimoSussurro") : -100000L;
+    }
+
+    public static void definirUltimoSussurro(Player p, long tick) {
+        raiz(p).putLong("ultimoSussurro", tick);
+    }
+
     /** Chamado no servidor quando o jogador abre um Livro do Rei. */
     public static void lerLivro(ServerPlayer sp, int idLivro) {
         CompoundTag r = raiz(sp);

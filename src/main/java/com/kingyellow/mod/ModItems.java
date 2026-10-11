@@ -8,6 +8,7 @@ import java.util.List;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -19,6 +20,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> PAGINA_AMARELA =
             ITEMS.register("pagina_amarela", () -> new Item(new Item.Properties()));
+
+    /** Ovo de spawn do Rei de Amarelo (para testes no criativo). */
+    public static final RegistryObject<Item> OVO_REI = ITEMS.register("rei_amarelo_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.REI_AMARELO, 0xE8B00C, 0x1A1208, new Item.Properties()));
 
     /** Livros do Rei (indice 0 = livro 1). */
     public static final List<RegistryObject<Item>> LIVROS = new ArrayList<>();

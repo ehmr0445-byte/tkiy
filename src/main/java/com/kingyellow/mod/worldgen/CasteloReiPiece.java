@@ -1,10 +1,13 @@
 package com.kingyellow.mod.worldgen;
 
+import com.kingyellow.mod.ModEntities;
 import com.kingyellow.mod.ModItems;
+import com.kingyellow.mod.entity.ReiAmareloEntity;
 import com.kingyellow.mod.ModStructures;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
@@ -247,7 +250,8 @@ public class CasteloReiPiece extends PecaProcedural {
             if (y == 37) return bloco(Blocks.SOUL_LANTERN).setValue(LanternBlock.HANGING, true);
         }
 
-        if (y >= 2 && y <= 43 && hash(dx, y, dz) % 1000 < 3) return bloco(Blocks.COBWEB);
+        // lanternas amarelas flutuando pela nave (aspecto etereo)
+        if (y >= 2 && y <= 43 && hash(dx, y, dz) % 1000 < 4) return bloco(Blocks.LANTERN);
         return null;
     }
 
@@ -255,6 +259,16 @@ public class CasteloReiPiece extends PecaProcedural {
 
     @Override
     protected void depois(WorldGenLevel level, BoundingBox box) {
+        // o Rei de Amarelo, de pe diante do trono (kz = -27, no degrau mais alto da plataforma)
+        BlockPos posRei = new BlockPos(ox, oy + 3, oz - 27 - KZ);
+        if (box.isInside(posRei)) {
+            ReiAmareloEntity rei = ModEntities.REI_AMARELO.get().create(level.getLevel());
+            if (rei != null) {
+                rei.moveTo(ox + 0.5D, oy + 3.0D, oz - 27 - KZ + 0.5D, 0.0F, 0.0F);
+                rei.finalizeSpawn(level, level.getCurrentDifficultyAt(posRei), MobSpawnType.STRUCTURE, null, null);
+                level.addFreshEntityWithPassengers(rei);
+            }
+        }
         for (int i = 0; i < BAUS.length; i++) {
             BlockPos p = new BlockPos(ox + BAUS[i][0], oy + 16, oz + BAUS[i][1] - KZ);
             if (!box.isInside(p)) {

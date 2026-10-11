@@ -23,6 +23,8 @@ public class KingYellowMod {
         ModCreativeTabs.TABS.register(modBus);
         ModStructures.STRUCTURES.register(modBus);
         ModStructures.PIECES.register(modBus);
+        ModEntities.ENTITIES.register(modBus);
+        ModSons.SONS.register(modBus);
 
         LOGGER.info("The King In Yellow carregado. O Rei aguarda.");
     }

@@ -11,5 +11,8 @@
   "item.kingyellow.livro_do_rei_4": "Sob Dois Sóis",
   "item.kingyellow.livro_do_rei_5": "A Máscara e a Face",
   "item.kingyellow.livro_do_rei_6": "Lago de Hali",
-  "item.kingyellow.livro_do_rei_7": "O Último Ato"
+  "item.kingyellow.livro_do_rei_7": "O Último Ato",
+  "entity.kingyellow.rei_amarelo": "King in Yellow",
+  "item.kingyellow.rei_amarelo_spawn_egg": "King in Yellow Spawn Egg",
+  "subtitles.kingyellow.sussurros": "Whispers"
 }
